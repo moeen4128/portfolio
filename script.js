@@ -140,28 +140,21 @@ $(document).ready(function () {
   $("#contactForm").submit(function (e) {
     e.preventDefault();
 
-    // Get form data
     var formData = {
       name: $('input[name="name"]').val(),
       email: $('input[name="email"]').val(),
       subject: $('input[name="subject"]').val(),
       message: $('textarea[name="message"]').val(),
+      _subject: "📩 Someone contacted you from your portfolio"
     };
 
-    // Simple validation
-    if (
-      !formData.name ||
-      !formData.email ||
-      !formData.subject ||
-      !formData.message
-    ) {
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
       alert("Please fill all fields");
       return;
     }
 
-    // Send email (using FormSubmit.co as a simple solution)
     $.ajax({
-      url: "https://formsubmit.co/ajax/talhasaleem4082@gmail.com",
+      url: "https://formsubmit.co/ajax/moeen.abdulmajeed786@gmail.com",  // ✅ your email here
       method: "POST",
       data: formData,
       dataType: "json",
@@ -170,10 +163,8 @@ $(document).ready(function () {
         $("#contactForm")[0].reset();
       },
       error: function (xhr, status, error) {
-        alert(
-          "An error occurred. Please try again later or contact me directly at talhasaleem4082@gmail.com"
-        );
-      },
+        alert("An error occurred. Please try again later or contact me directly.");
+      }
     });
   });
 });
