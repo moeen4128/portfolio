@@ -154,7 +154,7 @@ $(document).ready(function () {
     }
 
     $.ajax({
-      url: "https://formsubmit.co/ajax/moeen.abdulmajeed786@gmail.com",  // ✅ your email here
+      url: "https://formsubmit.co/ajax/moeen.abdulmajeed786@gmail.com",  
       method: "POST",
       data: formData,
       dataType: "json",
